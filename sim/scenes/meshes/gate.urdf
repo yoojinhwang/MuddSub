@@ -1,0 +1,92 @@
+<?xml version="1.0" ?>
+<robot name="gate">
+  <link name="gate__gate_top">
+    <inertial>
+      <mass value="0"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+    <collision name="gate__gate_top_collide">
+      <origin rpy="0      1.5707  0" xyz="0  0  0"/>
+      <geometry>
+        <cylinder length="3.05" radius="0.0381"/>
+      </geometry>
+    </collision>
+    <visual name="gate__gate_top_vis">
+      <origin rpy="0      1.5707  0" xyz="0  0  0"/>
+      <geometry>
+        <cylinder length="3.05" radius="0.0381"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="gate__gate_right">
+    <inertial>
+      <mass value="0"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+    <collision name="gate__gate_right_collide">
+      <origin rpy="0  0  0" xyz="1.525  0    -0.762"/>
+      <geometry>
+        <cylinder length="1.52" radius="0.0381"/>
+      </geometry>
+    </collision>
+    <visual name="gate__gate_right_vis">
+      <origin rpy="0  0  0" xyz="1.525  0    -0.762"/>
+      <geometry>
+        <cylinder length="1.21" radius="0.0381"/>
+      </geometry>
+    </visual>
+    <visual name="gate__gate_right_top">
+      <origin rpy="0  0  0" xyz="1.525   0     -0.0762"/>
+      <geometry>
+        <cylinder length="0.16" radius="0.0381"/>
+      </geometry>
+    </visual>
+    <visual name="gate__gate_right_bottom">
+      <origin rpy="0  0  0" xyz="1.525   0     -1.4478"/>
+      <geometry>
+        <cylinder length="0.16" radius="0.0381"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="gate__gate_left">
+    <inertial>
+      <mass value="0"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+    <collision name="gate__gate_left_collide">
+      <origin rpy="0  0  0" xyz="-1.525  0    -0.762"/>
+      <geometry>
+        <cylinder length="1.52" radius="0.0381"/>
+      </geometry>
+    </collision>
+    <visual name="gate__gate_left_vis">
+      <origin rpy="0  0  0" xyz="-1.525  0    -0.762"/>
+      <geometry>
+        <cylinder length="1.21" radius="0.0381"/>
+      </geometry>
+    </visual>
+    <visual name="gate__gate_left_top">
+      <origin rpy="0  0  0" xyz="-1.525   0     -0.0762"/>
+      <geometry>
+        <cylinder length="0.16" radius="0.0381"/>
+      </geometry>
+    </visual>
+    <visual name="gate__gate_left_bottom">
+      <origin rpy="0  0  0" xyz="-1.525   0     -1.4478"/>
+      <geometry>
+        <cylinder length="0.16" radius="0.0381"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="joint1" type="continuous">
+    <parent link="gate__gate_top" />
+    <child link="gate__gate_left" />
+  </joint>
+  <joint name="joint2" type="continuous">
+    <parent link="gate__gate_top" />
+    <child link="gate__gate_right" />
+  </joint>
+</robot>
